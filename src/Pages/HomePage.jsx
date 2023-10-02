@@ -1,4 +1,5 @@
 import React from "react";
+import BaseHoc from "../hoc/BaseHoc"; //to use HOC in a page we want to import the HOC file
 
 function HomeComponent() {
     return (
@@ -8,4 +9,4 @@ function HomeComponent() {
     );
 }
 
-export default HomeComponent;
+export default BaseHoc(HomeComponent); //this is how we use wrap a component inside HOC

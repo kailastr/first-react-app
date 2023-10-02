@@ -7,7 +7,7 @@ import App from './App';
 //in  the below line it is saying that we are creating a react DOM using root id
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  //the below tags are in JSX format and is used to render/run only stable version of react not the versions uder development
+  //the below tags are in JSX format and is used to render/run only stable version of react not the versions under development
   <React.StrictMode>
     {/* everything that comes inside the <BrowserRouter> tag could inherit the property of routing */}
     <BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function FunctionalComponent(props) {
 
@@ -8,6 +8,28 @@ function FunctionalComponent(props) {
     const SubtractFn = () => {
         setCount(count - 1);
     };
+
+    useEffect(() => {
+        console.log("Component did mount");
+    }, []); //the [] is known as the dependency array which tells the useEffect when to run.In this case the array tells that only run when the array is empty ie; when the page is initially loading
+
+    useEffect(() => {
+        console.log("Component did Update");
+    }); //this useEffect run only when any update happens to the component
+
+    useEffect(() => {
+        console.log("Component did update on inputName variable");
+    }, [inputName]); //this function is used to track changes happens to the inputName variable
+
+    useEffect(() => {
+        console.log("Component change happen to the props");
+    }, [props]);
+
+    useEffect(() => {
+        return console.log("Component did Unmount");
+    }, []); //this useEffect uses 'return' which helps to get the unmount(deletion) of components when we go from one page to another page or for some other reasons
+
+    const prevRef = useRef(); //useRef is used to use the refference of any variable so that we could check that the change is required or not
 
     return (
         <div>
